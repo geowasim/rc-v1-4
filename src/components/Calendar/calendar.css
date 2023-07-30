@@ -1,0 +1,407 @@
+.table {
+  height: 80vh;
+  max-width: 95vw;
+  width: 95vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  align-content: stretch;
+  display: table-cell;
+  border: 1px;
+  border-collapse: collapse;
+}
+
+.table-week {
+  display: flex;
+  flex-direction: row;
+}
+.grid div {
+  border-bottom: 1px solid;
+  width: 100%;
+}
+.thead {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  border: 1px solid #808080;
+  border-collapse: collapse;
+  border-bottom: none;
+  height: 43px;
+}
+.thead .tr {
+  width: 100%;
+  text-align: start;
+  padding-left: 1rem;
+  border: 1px dotted #808080;
+}
+
+.tbody {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  min-height: 95%;
+  width: 100%;
+  border: 1px solid #808080;
+  border-top: none;
+  border-collapse: collapse;
+  text-align: center;
+}
+.tr {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+.td {
+  border: 1px dotted lightgray;
+  border-collapse: collapse;
+  text-align: right;
+  cursor: pointer;
+}
+ul {
+  list-style: none;
+}
+.selectedDay {
+  /* background-color: rgba(186, 205, 232, 0.638); */
+}
+.selectedDate {
+  border-top: 1px solid rgb(99, 96, 96);
+  border-top-left-radius: 25px;
+}
+.td:hover {
+  background-color: rgba(186, 205, 232, 0.638);
+}
+.first_day {
+  grid-column-start: 3;
+}
+
+.calendar_date_change_control {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+}
+
+.previousMonth,
+.currentMonth,
+.notCurrentMonth,
+.nextMonth {
+  padding: 5px;
+}
+
+.currentMonth {
+  color: rgb(75, 75, 80);
+  font-size: larger;
+}
+.notCurrentMonth {
+  color: #808080;
+  background-color: #f8f8f8;
+}
+
+.currentMonth,
+.notCurrentMonth {
+  padding: 5px;
+}
+
+.returToCurrentMonth button {
+  margin-left: 20px;
+}
+
+.all_days {
+  padding: 0;
+  position: relative;
+}
+
+.all_days li span {
+  text-align: end;
+  padding: 2px 5px;
+  color: #555;
+}
+
+.today {
+  background-color: #eaf6ff;
+}
+
+.today span {
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+/* ul {
+  max-height: auto;
+} */
+/* ul li {
+  z-index: -10000;
+} */
+ul li p {
+  font-size: 16px;
+}
+li .event_block {
+  border: 1px solid rgb(108, 16, 16);
+  margin-top: 0px;
+  text-align: left;
+  z-index: 10;
+  border-radius: 5px;
+  text-align: center;
+}
+span {
+  display: block;
+  width: 100%;
+}
+
+.test_dialog {
+  width: 500px;
+  height: 300px;
+  background: red;
+  position: absolute;
+  top: 200px;
+  z-index: 500;
+  opacity: 0.5;
+}
+
+@media screen and (max-width: 992px) {
+  .table {
+    width: 85vw;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .event_block {
+    font-size: 10px;
+  }
+  .thead .tr a {
+    font-size: 90%;
+  }
+
+  .table {
+    width: 95vw;
+  }
+}
+
+@media screen and (min-width: 769px) {
+  .level {
+    display: flex;
+  }
+}
+
+.level {
+  align-items: center;
+  justify-content: space-between;
+}
+
+button {
+  background-color: #fff;
+  border-color: #dbdbdb;
+  border-width: 1px;
+  color: #363636;
+  cursor: pointer;
+  justify-content: center;
+  padding-bottom: calc(0.5em - 1px);
+  padding-left: 1em;
+  padding-right: 1em;
+  padding-top: calc(0.5em - 1px);
+  text-align: center;
+  white-space: nowrap;
+}
+
+.button.is-small {
+  border-radius: 2px;
+  font-size: 0.75rem;
+}
+.button.is-small:hover {
+  box-shadow: 0 1px 3px #808080;
+}
+.button.is-primary {
+  background-color: #00d1b2;
+  border-color: transparent;
+  color: #fff;
+}
+.button.is-primary:hover {
+  background-color: #00a1b2;
+}
+
+.level-left {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.level-left,
+.level-right {
+  flex-basis: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+.level-left h2 {
+  margin-left: 5px;
+}
+.level-left button {
+  margin-left: 5px;
+}
+
+@media screen and (min-width: 769px) {
+  .level-right {
+    display: flex;
+  }
+}
+.level-right {
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.select {
+  display: inline-block;
+  max-width: 100%;
+  position: relative;
+  vertical-align: top;
+}
+
+.select select:not([multiple]) {
+  padding: 0.3rem 0;
+  padding-right: 2.5em;
+  padding-left: 2px;
+}
+.select select {
+  cursor: pointer;
+  display: block;
+  font-size: 1em;
+  max-width: 100%;
+  outline: 0;
+}
+.select select {
+  background-color: #fff;
+  border-color: #dbdbdb;
+  border-radius: 4px;
+  color: #363636;
+}
+.calendar-weekControl h1 {
+  padding-left: 1rem;
+}
+
+.title {
+  color: #363636;
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.125;
+  text-transform: capitalize;
+}
+
+@media screen and (max-width: 769px) {
+  .title {
+    font-size: 1.4rem;
+  }
+  .level-left h2 {
+    font-size: 1rem;
+  }
+}
+
+nav {
+  margin: 2rem 0;
+  display: flex;
+}
+
+.date-picker-selector {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* ---WeeklyCalendar--- */
+.table-week-container {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #808080;
+  width: 95vw;
+  overflow-y: scroll;
+  height: 80vh;
+  color: #555;
+}
+
+.week {
+  width: 100%;
+}
+
+.week-time-column {
+  width: 2rem;
+}
+
+thead tr th {
+  border-bottom: 1px dotted #dbdbdb;
+  border-right: 1px dotted #dbdbdb;
+  background-color: #00d1b2;
+  color: #fff;
+}
+
+tbody,
+td {
+  border-bottom: 1px dotted #dbdbdb;
+  border-left: 1px dotted #dbdbdb;
+  border-collapse: collapse;
+}
+
+tbody tr {
+  height: 2rem;
+}
+
+.week-footer {
+  height: 2rem;
+}
+/* Daily --------- */
+.daily-calendar {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #ccc;
+  padding: 10px;
+  padding-left: 0;
+  width: 95vw;
+}
+
+.daily-calendar-header {
+  /* display: flex;
+  justify-content: space-between;
+  align-items: center; */
+  background: #00d1b2;
+  color: #fff;
+  text-align: center;
+}
+
+.daily-calendar-header button {
+  padding: 5px 10px;
+  background-color: #f5f5f5;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.daily-calendar-header h2 {
+  margin: 0;
+  text-transform: capitalize;
+  text-align: center;
+}
+
+.daily-calendar-table {
+  width: 100%;
+  border-right: 1px dotted #ccc;
+  border-top: 1px dotted #ccc;
+  border-radius: 5px;
+}
+
+.daily-calendar-table td {
+  padding: 10px;
+}
+
+.daily-time-slot {
+  width: 8vw;
+  text-align: center;
+  border-bottom: 1px dotted #ccc;
+}
+@media only screen and (max-width: 600px) {
+  .daily-time-slot {
+    font-size: 10px;
+  }
+}
+
+.daily-calendar-cell {
+  height: 50px;
+  border-left: 1px dotted #ccc;
+}
