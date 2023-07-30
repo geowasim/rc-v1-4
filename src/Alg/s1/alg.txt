@@ -1,4 +1,4 @@
-find for me an algorithm for overlapping and not overlapping events in react weekly calendar
+find for me an alg for wrc
 [
   {
     id: 1,
